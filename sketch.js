@@ -3,20 +3,12 @@
   var button;
   
 function preload() {
-  //my table is comma separated value "csv"
-  //and has a header specifying the columns labels
-  table = loadTable("data/GPScombined.csv", "csv", "header");
-  //the file can be remote
-  //table = loadTable("http://p5js.org/reference/assets/mammals.csv",
-  //                  "csv", "header");
+
 }
 function setup() {
   createCanvas(640, 480);
+  table = loadTable("data/GPScombined.csv", "csv", "header",readTable);
   
-  print(table.getRowCount() + " total rows in table");
-  print(table.getColumnCount() + " total columns in table");
-
-  print(table.getColumn("yaw"));
   //["Goat", "Leopard", "Zebra"]
 
   //cycle through the table
@@ -34,4 +26,11 @@ function draw() {
     fill(255);
   }
   ellipse(mouseX, mouseY, 80, 80);
+}
+
+function readTable(data) {
+  print(table.getRowCount() + " total rows in table");
+  print(table.getColumnCount() + " total columns in table");
+
+  print(table.getColumn("yaw"));
 }
