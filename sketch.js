@@ -16,7 +16,7 @@ function setup() {
   print(table.getRowCount() + " total rows in table");
   print(table.getColumnCount() + " total columns in table");
 
-  print(table.getColumn("lat"));
+  print(table.getColumn("yaw"));
   //["Goat", "Leopard", "Zebra"]
 
   //cycle through the table
